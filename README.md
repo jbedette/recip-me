@@ -1,7 +1,7 @@
 # songclone
 
 
-use soundcloud api to look up artists and save upcoming events in the greater new york area and save it to a user's list of upccoming shows.
+use songkick api to look up artists and save upcoming events in the greater new york area and save it to a user's list of upccoming shows.
 
 -user table
 -events table

@@ -1,11 +1,16 @@
 # songclone
 
 
-use songkick api to look up artists and save upcoming events in the greater new york area and save it to a user's list of upccoming shows.
+use recipe apis to look up recipes and save it to a user
 
 -user table
--events table
+-recipes table
 -join table of users and events
--stretch goals = use unofficial npm pitchfork music to get reviews of the bands recent music, add in more event aggregators
+-stretch goals = npm search function
 
 -major issues, working with the users/events join, figuring out the songkick api,
+
+
+search- https://www.npmjs.com/package/algoliasearch
+
+recipe api -http://www.recipepuppy.com/about/api/

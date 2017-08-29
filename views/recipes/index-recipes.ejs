@@ -1,0 +1,15 @@
+<%# views/recipes/index-recipes.ejs %>
+
+<h1>All the recipes</h1>
+
+<% recipes.forEach(recipe => { %>
+  <div class="recipe">
+    <h4>
+      <a href="<%= `/recipes/${recipe.id}` %>">
+        <%= recipe.title %>
+      </a>
+    </h4>
+    <p><%= recipe.description %></p>
+    <h5><%= recipe.ingredients + ' ' + recipe._date %>
+  </div>
+<% }) %>

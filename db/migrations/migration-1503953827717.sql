@@ -1,7 +1,7 @@
-CREATE TABLE IF NOT EXISTS events (
+CREATE TABLE IF NOT EXISTS recipes (
   id BIGSERIAL PRIMARY KEY,
   title VARCHAR(255),
   description TEXT,
-  location VARCHAR(255),
+  ingredients VARCHAR(255),
   _date BIGINT
 );

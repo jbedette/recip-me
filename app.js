@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-const eventsRouter = require('./routes/events-routes');
-app.use('/events', eventsRouter);
+const recipesRouter = require('./routes/recipes-routes');
+app.use('/recipes', recipesRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');

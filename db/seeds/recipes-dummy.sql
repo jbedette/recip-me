@@ -1,4 +1,4 @@
-INSERT INTO events (title, description,location, _date) VALUES
+INSERT INTO recipes (title, description,ingredients, _date) VALUES
   (
     'Converge',
     'hardcore experimental',

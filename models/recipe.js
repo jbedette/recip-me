@@ -10,5 +10,13 @@ Recipe.findAll = () => {
 Recipe.findById = id => {
   return db.oneOrNone(`SELECT * FROM recipes WHERE id = $1`, [id]);
 };
+Recipe.create = (recipe, userid) => {
+  return db.one(`
+    INSERT INTO recipes
+    (name, age, species, picture, user_id)
+    VALUES ($1, $2, $3, $4)
+    RETURNING *
+  `, [recipe.title, recipe.description, recipe.ingredients, recipe._date, userid]);
+};
 
 module.exports = Recipe;

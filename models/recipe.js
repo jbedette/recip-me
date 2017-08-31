@@ -13,10 +13,10 @@ Recipe.findById = id => {
 Recipe.create = (recipe, userid) => {
   return db.one(`
     INSERT INTO recipes
-    (name, age, species, picture, user_id)
-    VALUES ($1, $2, $3, $4)
+    (title, description, ingredients)
+    VALUES ($1, $2, $3)
     RETURNING *
-  `, [recipe.title, recipe.description, recipe.ingredients, recipe._date, userid]);
+  `, [recipe.title, recipe.description, recipe.ingredients]);
 };
 
 module.exports = Recipe;

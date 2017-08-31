@@ -30,6 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // ejs views and port
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 const PORT = process.env.PORT || 3000;

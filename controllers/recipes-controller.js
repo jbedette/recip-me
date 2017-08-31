@@ -20,4 +20,17 @@ recipesController.show = (req, res) => {
       res.status(400).json(err);
     });
 };
+//add recipe
+
+recipesController.create=(req,res)=>{
+  Recipe.create({
+    title: req.body.title,
+    description: req.body.description,
+    ingredients:req.body.ingredients
+  },req.user.id).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+}
+
 module.exports = recipesController;

@@ -1,0 +1,26 @@
+.body{
+  width: inherit;
+  height: 700px;
+  position: absolute;
+}
+.navbar{
+  height:10%;
+  position: fixed;
+  width: 100%;
+  background-color: red;
+}
+.sidebar{
+  position: fixed;
+  right:0;
+  top: 10%;
+  width: 30%;
+  background-color: green;
+  height: 90%;
+}
+.recipe{
+  background-color: yellow;
+}
+.spacer{
+  height: 10%;
+  width: 100%;
+}

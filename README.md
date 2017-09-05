@@ -47,3 +47,10 @@ select most recent id : SELECT id FROM recipes ORDER BY id DESC LIMIT 1
 req.bod={
   animal:dog
   }**
+
+bring in the json datat first, then render, need to connect to the api. do res.json first,
+
+
+need to get api datat, post it to database,delete users, edit users, if user is logged in, allow saving
+
+on recipe index, link to main-recipe.js

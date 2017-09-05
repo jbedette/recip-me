@@ -32,17 +32,8 @@ app.use(passport.session());
 // ejs views and port
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
+
 app.set('views', path.join(__dirname, 'views'));
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`App is up and running. Listening on port ${PORT}`);
-});
-
-
-const authRoutes = require('./routes/auth-routes');
-app.use('/auth', authRoutes);
-const userRoutes = require('./routes/user-routes');
-app.use('/user', userRoutes);
 
 
 //recipe-routes
@@ -50,5 +41,18 @@ const recipesRouter = require('./routes/recipes-routes');
 app.use('/recipes', recipesRouter);
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.render('index');
+});
+
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);
+const userRoutes = require('./routes/user-routes');
+app.use('/user', userRoutes);
+
+const profileRoutes = require('./routes/profile-routes');
+app.use('/profile', profileRoutes);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`App is up and running. Listening on port ${PORT}`);
 });

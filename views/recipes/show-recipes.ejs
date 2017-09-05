@@ -1,9 +1,23 @@
-<%# views/movies/show.ejs %>
 
-<h1><%= recipe.title %></h1>
 
-<p><%= recipe.description %></p>
-<p><%=recipe.ingredients%></p>
-<p><%=recipe._date%></p>
+<%# views/recipes/index-recipes.ejs %>
+<% include ../partials/boilerplate %>
 
-<a href="/recipes">Back to recipe index</a>
+
+
+    <div class="recipe">
+      <h4><%= recipe.title %></h4>
+      <h5><%= recipe.ingredients %></h5>
+      <h5><a href='<%= recipe.link %>'</a>Link</h5>
+      <img src='<%= recipe.img%>'></img>
+      <form method="POST" action="/recipes">
+        <input type="hidden" name="title" value="<%= recipe.title %>">
+        <input type="hidden" name="ingredients" value="<%= recipe.ingredients %>">
+        <input type="hidden" name="link" value="<%= recipe.link %>">
+        <input type="hidden" name="img" value="<%= recipe.img %>">
+        <input class="addRecpie" type="submit" value="ADD">
+      </form>
+    </div>
+
+<a href="/">Back to recipe search</a>
+<% include ../partials/end %>

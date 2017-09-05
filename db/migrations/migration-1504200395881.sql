@@ -1,6 +1,0 @@
-CREATE TABLE IF NOT EXISTS users_recipes (
-  id SERIAL PRIMARY KEY,
-  user_id BIGINT,
-  recipe_id BIGINT,
-  add_date DATETIME NOT NULL DEFAULT(GETDATE())
-)

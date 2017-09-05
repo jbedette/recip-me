@@ -13,10 +13,21 @@ Recipe.findById = id => {
 Recipe.create = (recipe, userid) => {
   return db.one(`
     INSERT INTO recipes
-    (title, description, ingredients)
-    VALUES ($1, $2, $3)
+    (title, ingredients, img, link, user_id)
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING *
-  `, [recipe.title, recipe.description, recipe.ingredients]);
+  `, [recipe.title, recipe.ingredients, recipe.img, recipe.link, userid]);
 };
-
+Recipe.destroy = (id)=>{
+  return db.none(`
+    DELETE FROM recipes
+    WHERE id=$1
+    `)
+}
+Recipe.findUser = (userid)=>{
+  return db.query(`
+    SELECT * FROM recipes
+    JOIN users ON users.id = recipes.user_id
+    where users.id = $1`,[userid])
+}
 module.exports = Recipe;

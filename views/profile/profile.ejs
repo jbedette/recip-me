@@ -3,14 +3,16 @@
 
 <h1>All your recipes</h1>
 
-<!-- <% recipes.forEach(recipe => { %>
+<% recipe.forEach(recipe => { %>
   <div class="recipe">
     <h4><%= recipe.title %></h4>
     <h5><%= recipe.ingredients %></h5>
     <h5><a href='<%= recipe.link %>'</a>Link</h5>
-    <input type="submit" name="delete" value="">
-
+    <form action="/recipes/delete" method="post">
+      <input type="hidden" name='id'/>
+      <input type='submit' value='delete'/>
+    </form>
   </div>
-<%)}%> -->
+<%})%>
 
 <% include ../partials/end %>

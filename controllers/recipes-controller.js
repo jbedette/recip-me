@@ -11,26 +11,30 @@ recipesController.index = (req, res) => {
       res.status(400).json(err);
     });
 };
-recipesController.show = (req, res) => {
-  Recipe.findById(req.params.id)
-    .then(recipe => {
-      res.render('recipes/show-recipes', { recipe: recipe })
-    })
-    .catch(err => {
-      res.status(400).json(err);
-    });
+
+recipesController.getRecipe = (req, res) => {
 };
 //add recipe
 
 recipesController.create=(req,res)=>{
   Recipe.create({
     title: req.body.title,
-    description: req.body.description,
-    ingredients:req.body.ingredients
-  },req.user.id).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
+    ingredients:req.body.ingredients,
+    link: req.body.link,
+    img:req.body.img,},req.user.id)
+    .then(recipe =>{
+      console.log(recipe)
+      res.redirect('/');
+    })
+  .catch(err => {
+    alert('you must logs to add recipe');
   });
+}
+recipesController.delete=(req,res)=>{
+  Recipe.destroy(req.body.id)
+  .then(()=>{
+    res.redirect('/profile');
+  })
 }
 
 module.exports = recipesController;

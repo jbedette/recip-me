@@ -1,6 +1,6 @@
 .body{
   width: inherit;
-  height: 700px;
+  height: 400px;
   position: absolute;
 }
 .navbar{
@@ -8,6 +8,8 @@
   position: fixed;
   width: 100%;
   background-color: red;
+  border: 1px solid black;
+  z-index: 0;
 }
 .sidebar{
   position: fixed;
@@ -23,4 +25,9 @@
 .spacer{
   height: 10%;
   width: 100%;
+  position: fixed;
+}
+.viewport{
+  position: fixed;
+  top:10%;
 }

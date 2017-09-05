@@ -13,7 +13,7 @@ usersController.create = (req, res) => {
   }).then(user => {
     req.login(user, (err) => {
       if (err) return next(err);
-      res.redirect('/user');
+      res.redirect('/');
     });
   }).catch(err => {
     console.log(err);
@@ -21,10 +21,17 @@ usersController.create = (req, res) => {
   });
 }
 usersController.index = (req, res) => {
-  res.json({
-    user: req.user,
-    data: 'Put a user profile on this route'
-  });
+  User.findUserRecipes(req.user.id)
+    .then(data => {
+        res.json({
+        user: req.user,
+        data: 'Put a user profile on this route',
+        recipe: recipe,
+      });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({err: err});
+    });
 }
 
 module.exports = usersController;

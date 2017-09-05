@@ -1,7 +1,0 @@
-CREATE TABLE IF NOT EXISTS dummyRecipes(
-  id BIGSERIAL PRIMARY KEY,
-  title VARCHAR(255),
-  description TEXT,
-  ingredients VARCHAR(255),
-  _date DATETIME NOT NULL DEFAULT(GETDATE())
-);

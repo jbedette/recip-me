@@ -8,9 +8,10 @@
     <h4><%= recipe.title %></h4>
     <h5><%= recipe.ingredients %></h5>
     <h5><a href='<%= recipe.link %>'</a>Link</h5>
-    <form action="/recipes/delete" method="post">
-      <input type="hidden" name='id'/>
+    <form method="POST" action="/recipes/delete?_method=DELETE" >
+      <input type="hidden" name='id' value='<%=recipe.id%>'/>
       <input type='submit' value='delete'/>
+      <%console.log(recipe.id,'--------')%>
     </form>
   </div>
 <%})%>

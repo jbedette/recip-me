@@ -19,15 +19,28 @@ Recipe.create = (recipe, userid) => {
   `, [recipe.title, recipe.ingredients, recipe.img, recipe.link, userid]);
 };
 Recipe.destroy = (id)=>{
+  console.log(id)
   return db.none(`
     DELETE FROM recipes
     WHERE id=$1
-    `)
-}
+    `,[id])
+};
 Recipe.findUser = (userid)=>{
   return db.query(`
-    SELECT * FROM recipes
-    JOIN users ON users.id = recipes.user_id
-    where users.id = $1`,[userid])
+    SELECT * FROM  users
+    JOIN recipes ON users.id = recipes.user_id
+    where recipes.user_id = $1`,[userid])
 }
+Recipe.update = (recipe,id) => {
+  return db.one(`
+    UPDATE recipes SET
+    title = $1
+    WHERE id = $2
+    RETURNING *
+  `, [recipe.title, id]);
+}
+
+
 module.exports = Recipe;
+
+

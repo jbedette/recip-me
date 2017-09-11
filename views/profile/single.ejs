@@ -1,0 +1,12 @@
+<%# views/recipes/index-recipes.ejs %>
+<% include ../partials/boilerplate %>
+<div>
+        <h4><%= recipe.title %></h4>
+      <form method='POST' action="/profile/<%=recipe.id%>?_method=PUT">
+        <input type="text" name='title' value='<%= recipe.title %>'>
+        <input type='submit' value='edit'>
+        <%console.log(recipe.title)%>
+    </form>
+</div>
+
+<% include ../partials/end %>

@@ -33,7 +33,7 @@ recipesController.create=(req,res)=>{
 recipesController.delete=(req,res)=>{
   Recipe.destroy(req.body.id)
   .then(()=>{
-    res.redirect('/profile');
+    res.redirect('/profile/profile');
   })
 }
 

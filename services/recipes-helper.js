@@ -2,7 +2,7 @@ require('isomorphic-fetch');
 //require('dotenv').config(); //not necessary but good for future
 
 function getRecipeFromApi(req, res, next){
-  fetch(`http://www.recipepuppy.com/api/?i=${req.body.ingQuery}&q=&p=1`)
+  fetch(`http://www.recipepuppy.com/api/?i=${req.body.ingQuery}&q=&p=5`)
   .then((recipeRes) => {
       return recipeRes.json();
     }).then((data) => {

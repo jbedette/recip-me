@@ -13,6 +13,13 @@ recipesController.index = (req, res) => {
 };
 
 recipesController.getRecipe = (req, res) => {
+  Recipe.findById(req.params.id).then(recipe=>{
+    res.render('profile/single',{recipe:recipe}
+    ).catch(err=>{
+      console.log(err);
+      res.status(500).json(err);
+    })
+  })
 };
 //add recipe
 

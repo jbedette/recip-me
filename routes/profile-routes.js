@@ -10,6 +10,9 @@ profileRouter.get('/profile',authHelpers.loginRequired,profileController.display
 
 profileRouter.post('/',authHelpers.loginRequired,recipesController.create, recipesController.index)
 
+profileRouter.get('/single/:id', recipesController.getRecipe )
+
+profileRouter.put('/:id',profileController.update)
 
 
 module.exports = profileRouter;

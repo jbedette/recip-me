@@ -18,4 +18,15 @@ profileController.display = (req,res,next)=>{
   })
 }
 
+profileController.update = (req, res) => {
+  Recipe.update({
+    title: req.body.title,    
+  }, req.params.id).then(user => {
+    res.redirect(`/`);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+}
+
 module.exports = profileController;

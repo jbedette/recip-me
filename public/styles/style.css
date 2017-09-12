@@ -8,8 +8,9 @@
   position: fixed;
   width: 100%;
   background-color: lightblue;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   z-index: 0;
+  text-align: center;
 }
 .sidebar{
   position: fixed;
@@ -18,10 +19,12 @@
   width: 30%;
   background-color: lightblue;
   height: 90%;
-  border: 1px solid black;
+  border-left: 1px solid black;
+  text-align: center;
 }
 .recipe{
   background-color: lightyellow;
+  text-align: center;
 }
 .spacer{
   height: 10%;
@@ -31,4 +34,5 @@
 .viewport{
   position: fixed;
   top:10%;
+  text-align: center;
 }

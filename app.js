@@ -52,7 +52,7 @@ app.use('/user', userRoutes);
 const profileRoutes = require('./routes/profile-routes');
 app.use('/profile', profileRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`App is up and running. Listening on port ${PORT}`);
 });

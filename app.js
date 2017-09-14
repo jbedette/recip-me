@@ -52,6 +52,6 @@ app.use('/user', userRoutes);
 const profileRoutes = require('./routes/profile-routes');
 app.use('/profile', profileRoutes);
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 5000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
